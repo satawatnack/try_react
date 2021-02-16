@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Layout from './containers/Layout/Layout';
+import Layout from './hoc/Layout/Layout';
 
 import Home from './containers/Home/Home';
 import Rockets from './containers/Rockets/Rockets';
