@@ -1,7 +1,7 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
-import Layout from './components/Layout/Layout';
+import Layout from './containers/Layout/Layout';
 
 import Home from './containers/Home/Home';
 import Rockets from './containers/Rockets/Rockets';
@@ -11,20 +11,6 @@ function App() {
   return (
     <div>
       <Layout>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/rockets">Rockets</Link>
-          </li>
-          <li>
-            <Link to="/launches">Launches</Link>
-          </li>
-        </ul>
-
-        <hr />
-
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/rockets" component={Rockets} />
