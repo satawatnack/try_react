@@ -1,8 +1,8 @@
 import React from 'react';
 
-import classes from './Home.css';
+import classes from './HomePage.css';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div className={classes.Content}>
       <h3>Home</h3>
@@ -10,4 +10,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

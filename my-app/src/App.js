@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Layout from './containers/Layout/Layout';
+import Layout from './hoc/Layout/Layout';
 
-import Home from './containers/Home/Home';
-import Rockets from './containers/Rockets/Rockets';
-import Launches from './containers/Launches/Launches';
+import Home from './containers/HomePage/HomePage';
+import Rockets from './containers/RocketsPage/RocketsPage';
+import Launches from './containers/LaunchesPage/LaunchesPage';
 
 function App() {
   return (

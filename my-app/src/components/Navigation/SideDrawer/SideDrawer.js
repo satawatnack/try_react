@@ -3,7 +3,7 @@ import React from 'react';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.css';
-import Backdrop from '../../../components/Backdrop/Backdrop';
+import Backdrop from '../../UI/Backdrop/Backdrop';
 import Auxx from '../../../hoc/Auxx';
 
 const SideDrawer = (props) => {
@@ -20,7 +20,7 @@ const SideDrawer = (props) => {
           <Logo />
         </div>
         <nav>
-          <NavigationItems />
+          <NavigationItems clicked={props.closed2} />
         </nav>
       </div>
     </Auxx>
