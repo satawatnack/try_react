@@ -4,6 +4,21 @@
     align-items: center;
 }
 
-.Launches div {
-    width: 50vw;
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    width: 50%;
+}
+
+.column {
+    flex: 60%;
+    padding: 10px;
+}
+.column2 {
+    flex: auto;
+    padding: 10px;
 }

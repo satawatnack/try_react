@@ -18,11 +18,6 @@ const LaunchesPage = () => {
 
   return (
     <div>
-      {/* {launchesData.map((launch) => (
-        <ul key={launch.flight_number}>
-          <li>{launch.flight_number}</li>
-        </ul>
-      ))} */}
       <Launches launchesData={launchesData} />
     </div>
   );

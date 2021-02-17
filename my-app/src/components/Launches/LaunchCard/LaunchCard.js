@@ -8,6 +8,16 @@ const LaunchCard = (props) => (
       <h5>Mission : {props.launch.mission_name}</h5>
       <ul>
         <li>rocket name : {props.launch.rocket.rocket_name}</li>
+        <li>
+          launch success:{' '}
+          <span
+            className={`${
+              props.launch.launch_success ? classes.green : classes.red
+            }`}
+          >
+            {props.launch.launch_success.toString()}
+          </span>
+        </li>
       </ul>
     </div>
   </div>
