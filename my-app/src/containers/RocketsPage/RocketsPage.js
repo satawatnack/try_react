@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Rockets = () => {
+const RocketsPage = () => {
   return (
     <div>
       <h3>Rocket</h3>
@@ -8,4 +8,4 @@ const Rockets = () => {
   );
 };
 
-export default Rockets;
+export default RocketsPage;
