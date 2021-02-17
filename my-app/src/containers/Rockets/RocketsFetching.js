@@ -12,11 +12,14 @@ const RocketsFetching = () => {
     fetchRockets();
   }, []);
   return (
-    <ul>
-      {rockets.map((rocket) => (
-        <li key={rocket.rocket_name}>{rocket.description}</li>
-      ))}
-    </ul>
+    <>
+      <ul>
+        {rockets.map((rocket) => (
+          <li key={rocket.rocket_name}>{rocket.description}</li>
+        ))}
+      </ul>
+      <p>asfasdf</p>
+    </>
   );
 };
 
