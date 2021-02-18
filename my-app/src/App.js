@@ -7,17 +7,21 @@ import Home from './containers/HomePage/HomePage';
 import Rockets from './containers/RocketsPage/RocketsPage';
 import Launches from './containers/LaunchesPage/LaunchesPage';
 
+import { FilterProvider } from './contexts/FilterContext';
+
 function App() {
   return (
-    <div>
-      <Layout>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/rockets" component={Rockets} />
-          <Route path="/launches" component={Launches} />
-        </Switch>
-      </Layout>
-    </div>
+    <FilterProvider>
+      <div>
+        <Layout>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/rockets" component={Rockets} />
+            <Route path="/launches" component={Launches} />
+          </Switch>
+        </Layout>
+      </div>
+    </FilterProvider>
   );
 }
 

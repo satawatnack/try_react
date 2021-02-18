@@ -3,7 +3,7 @@ import React from 'react';
 import SuccessFilter from './SuccessFliter/SuccessFilter';
 import classes from './FilterBar.css';
 
-const FilterBar = () => (
+const FilterBar = (props) => (
   <div>
     <SuccessFilter />
   </div>
