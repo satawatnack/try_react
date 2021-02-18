@@ -7,6 +7,7 @@
     animation: ease-in-out;
     margin: 1%;
     border-radius: 10px;
+    display: flexbox;
 
 }
 
@@ -17,7 +18,7 @@
 }
 
 /* Add some padding inside the card container */
-.Title {
+.Name {
     margin: 1rem;
     margin-bottom: 0px;
 }
@@ -25,6 +26,14 @@
 .Container {
     margin: 1rem;
     margin-top: 0.1rem;
+}
+
+.CardImg {
+    width: 20vw;
+    height: 35vh;
+    justify-self: left;
+    border-radius: 10px;
+
 }
 
 
