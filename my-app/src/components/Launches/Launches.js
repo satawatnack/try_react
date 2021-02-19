@@ -1,7 +1,7 @@
 import React from 'react';
 
 import LaunchCard from './LaunchCard/LaunchCard';
-import FilterBar from './FliterBar/FilterBar';
+import FilterBar from './FilterBar/FilterBar';
 import classes from './Launches.css';
 
 const Launch = (props) => (

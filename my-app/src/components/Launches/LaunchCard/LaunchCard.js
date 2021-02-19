@@ -18,6 +18,7 @@ const LaunchCard = (props) => (
             {props.launch.launch_success.toString()}
           </span>
         </li>
+        <li>launch year : {props.launch.launch_year}</li>
       </ul>
     </div>
   </div>

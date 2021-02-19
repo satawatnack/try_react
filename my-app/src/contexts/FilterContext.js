@@ -4,9 +4,19 @@ const FilterContext = createContext();
 
 export const FilterProvider = (props) => {
   const [successFilter, setSuccessFilter] = useState('All');
+  const [rocketFilter, setRocketFilter] = useState('');
+  const [yearFilter, setYearFilter] = useState('');
 
   const handleSuccessFilterChange = useCallback((e) => {
     setSuccessFilter(e.target.value);
+  }, []);
+
+  const handleRocketFilterChange = useCallback((e) => {
+    setRocketFilter(e.target.value);
+  }, []);
+
+  const handleYearFilterChange = useCallback((e) => {
+    setYearFilter(e.target.value);
   }, []);
 
   return (
@@ -14,6 +24,10 @@ export const FilterProvider = (props) => {
       value={{
         successFilter,
         handleSuccessFilterChange,
+        rocketFilter,
+        handleRocketFilterChange,
+        yearFilter,
+        handleYearFilterChange,
       }}
     >
       {props.children}

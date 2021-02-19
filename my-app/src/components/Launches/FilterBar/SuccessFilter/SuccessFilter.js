@@ -9,7 +9,7 @@ const SuccessFilter = (props) => {
   const { successFilter, handleSuccessFilterChange } = useFilter();
 
   return (
-    <div className="form-group">
+    <div className={classes.SuccessFilter}>
       <label htmlFor="select">launch success : </label>
       <select
         value={successFilter}
