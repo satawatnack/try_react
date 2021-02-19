@@ -2,6 +2,7 @@ import React from 'react';
 
 import LaunchCard from './LaunchCard/LaunchCard';
 import FilterBar from './FilterBar/FilterBar';
+import Loading from '../UI/Loading/Loading';
 import classes from './Launches.css';
 
 const Launch = (props) => (
@@ -13,6 +14,7 @@ const Launch = (props) => (
             <LaunchCard key={launch.flight_number} launch={launch} />
           ))}
         </div>
+        <Loading showLoading={props.showLoading} />
       </div>
       <div className={classes.column2}>
         <FilterBar />
