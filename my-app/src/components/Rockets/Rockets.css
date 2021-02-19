@@ -1,0 +1,9 @@
+.trayCard{
+    display: flex;
+    flex-direction: column;
+}
+
+.trayCardCover{
+    display: flex;
+    justify-content: center;
+}
