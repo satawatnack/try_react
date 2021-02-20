@@ -1,0 +1,54 @@
+.CardClose {
+    width: 70vw;
+    height: 50vh;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.32s;
+    animation: ease-in-out;
+    margin: 1%;
+    border-radius: 10px;
+    display: flexbox;
+    background-color: darkgreen;
+
+}
+
+.CardOpen {
+    width: 70vw;
+    height: 50vh;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.32s;
+    animation: ease-in-out;
+    margin: 1%;
+    border-radius: 10px;
+    display: flexbox;
+    background-color: darkred;
+
+}
+
+/* On mouse-over, add a deeper shadow */
+.Card:hover {
+    transform: scale(1.07);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+/* Add some padding inside the card container */
+.Name {
+    margin: 1rem;
+    margin-bottom: 0px;
+}
+
+.Container {
+    margin: 1rem;
+    margin-top: 0.1rem;
+}
+
+.CardImg {
+    width: 20vw;
+    height: 35vh;
+    justify-self: left;
+    border-radius: 10px;
+
+}
+
+
