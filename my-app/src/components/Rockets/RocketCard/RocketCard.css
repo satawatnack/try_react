@@ -1,4 +1,4 @@
-.Card {
+.CardClose {
     width: 70vw;
     height: 50vh;
     overflow: hidden;
@@ -8,6 +8,21 @@
     margin: 1%;
     border-radius: 10px;
     display: flexbox;
+    background-color: darkgreen;
+
+}
+
+.CardOpen {
+    width: 70vw;
+    height: 50vh;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.32s;
+    animation: ease-in-out;
+    margin: 1%;
+    border-radius: 10px;
+    display: flexbox;
+    background-color: darkred;
 
 }
 
