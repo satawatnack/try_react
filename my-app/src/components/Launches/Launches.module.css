@@ -1,0 +1,24 @@
+.Launches {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    width: 50%;
+}
+
+.column {
+    flex: 60%;
+    padding: 10px;
+}
+.column2 {
+    flex: auto;
+    padding: 10px;
+}

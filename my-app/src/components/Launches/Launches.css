@@ -1,9 +1,0 @@
-.Launches {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Launches div {
-    width: 50vw;
-}
