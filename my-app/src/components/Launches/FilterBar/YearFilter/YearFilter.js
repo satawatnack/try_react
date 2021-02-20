@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useFilter } from '../../../../contexts/FilterContext';
-import classes from './YearFilter.css';
+import classes from './YearFilter.module.css';
 
 const YearFilter = () => {
   const { handleYearFilterChange } = useFilter();

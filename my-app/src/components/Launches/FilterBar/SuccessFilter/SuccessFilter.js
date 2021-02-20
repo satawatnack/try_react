@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useFilter } from '../../../../contexts/FilterContext';
-import classes from './SuccessFilter.css';
+import classes from './SuccessFilter.module.css';
 
 const options = ['All', 'Success', 'Unsuccess'];
 

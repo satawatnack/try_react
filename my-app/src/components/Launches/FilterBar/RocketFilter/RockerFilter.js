@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useFilter } from '../../../../contexts/FilterContext';
-import classes from './RocketFilter.css';
+import classes from './RocketFilter.module.css';
 
 const RocketFilter = () => {
   const { handleRocketFilterChange } = useFilter();

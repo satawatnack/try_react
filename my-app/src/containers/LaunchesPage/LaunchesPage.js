@@ -3,7 +3,7 @@ import LaunchService from '../../services/LaunchService';
 
 import Launches from '../../components/Launches/Launches';
 import { useFilter } from '../../contexts/FilterContext';
-import classes from './LaunchesPage.css';
+import classes from './LaunchesPage.module.css';
 
 const LaunchesPage = () => {
   const [launchesData, setLaunchesData] = useState([]);

@@ -3,7 +3,7 @@ import React from 'react';
 import LaunchCard from './LaunchCard/LaunchCard';
 import FilterBar from './FilterBar/FilterBar';
 import Loading from '../UI/Loading/Loading';
-import classes from './Launches.css';
+import classes from './Launches.module.css';
 
 const Launch = (props) => (
   <div className={classes.container}>
@@ -11,7 +11,7 @@ const Launch = (props) => (
       <div className={classes.column}>
         <div className={classes.Launches}>
           {props.launchesData.map((launch) => (
-            <LaunchCard key={launch.flight_number} launch={launch} />
+            <LaunchCard key={launch.mission_name} launch={launch} />
           ))}
         </div>
         <Loading showLoading={props.showLoading} />
