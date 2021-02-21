@@ -8,7 +8,7 @@ const LaunchDetail = ({ match }) => {
     <div>
       <button
         onClick={() => {
-          history.goBack();
+          history.push('/launches');
         }}
       >
         Go back
