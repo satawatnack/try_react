@@ -9,13 +9,11 @@ import RocketDetail from './containers/RocketsPage/RocketDetail/RocketDetail';
 import Launches from './containers/LaunchesPage/LaunchesPage';
 import LaunchDetail from './containers/LaunchesPage/LaunchDetail/LaunchDetail';
 
-import { FilterProvider } from './contexts/FilterContext';
 import { LaunchProvider } from './contexts/LaunchContext';
 
 function App() {
   return (
     <LaunchProvider>
-      <FilterProvider>
         <div>
           <Layout>
             <Switch>
@@ -35,7 +33,6 @@ function App() {
             </Switch>
           </Layout>
         </div>
-      </FilterProvider>
     </LaunchProvider>
   );
 }
