@@ -20,7 +20,7 @@ const RocketCard = (props) => {
     // })
 
     return(
-        <div className="m-2 w-8/12 h-2/5 bg-white rounded-xl shadow-lg overflow-hidden mx-auto">
+        <div className="m-2  bg-white rounded-xl shadow-lg overflow-hidden mx-auto">
         <div className="md:flex">
             <div className="md:flex-shrink-0">
                 <img className="h-full w-full object-cover md:w-48" src={props.rocket.flickr_images[0]} alt={props.rocket.rocket_name}/>
