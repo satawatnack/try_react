@@ -14,7 +14,6 @@ const RocketDetail =  ({ match }) => {
         });
     }, []);
 
-    console.log(rocket.height)
     return(
         <>
         <div className="bg-red-500 w-screen h-screen flex">
@@ -32,7 +31,7 @@ const RocketDetail =  ({ match }) => {
             </div>
             <div className= "bg-yellow-500 w-1/2 h-screen flex-col">
             <div>
-                <img className="h-1/2 w-max" src="https://imgur.com/DaCfMsj.jpg" />
+                <img className="h-1/2 w-max" src={rocket?.flickr_images?.[0]?? ''} />
                 <div className="p-5"> Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.</div>
             </div>
             </div>
