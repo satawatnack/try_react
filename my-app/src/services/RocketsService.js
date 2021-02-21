@@ -5,7 +5,7 @@ const getAll = (limit = 0, offset = 0) => {
 };
 
 const get = (rocket_id) => {
-  return http.get(`rockets'/${rocket_id}`);
+  return http.get(`rockets/${rocket_id}`);
 };
 
 export default {

@@ -6,8 +6,8 @@ import classes from "./Rockets.css"
 const Rockets = (props) => {
   return(
     <>
-    <div className={classes.trayCardCover}>
-      <div className={classes.trayCard}>
+    <div className="flex justify-center">
+      <div className="flex-col w-3/5">
         {props.rocketsData.map((rocket) => (
           <RocketCard key={rocket.rocket_id} rocket={rocket} />
         ))}

@@ -5,6 +5,7 @@ import Layout from './hoc/Layout/Layout';
 
 import Home from './containers/HomePage/HomePage';
 import Rockets from './containers/RocketsPage/RocketsPage';
+import RocketDetail from './containers/RocketsPage/RocketDetail/RocketDetail';
 import Launches from './containers/LaunchesPage/LaunchesPage';
 import LaunchDetail from './containers/LaunchesPage/LaunchDetail/LaunchDetail';
 
@@ -25,6 +26,11 @@ function App() {
                 exact
                 path="/launches/:flightNumber"
                 component={LaunchDetail}
+              />
+              <Route
+                exact
+                path="/rockets/:rocket_id"
+                component={RocketDetail}
               />
             </Switch>
           </Layout>
