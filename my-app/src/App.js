@@ -8,28 +8,25 @@ import Rockets from './containers/RocketsPage/RocketsPage';
 import Launches from './containers/LaunchesPage/LaunchesPage';
 import LaunchDetail from './containers/LaunchesPage/LaunchDetail/LaunchDetail';
 
-import { FilterProvider } from './contexts/FilterContext';
 import { LaunchProvider } from './contexts/LaunchContext';
 
 function App() {
   return (
     <LaunchProvider>
-      <FilterProvider>
-        <div>
-          <Layout>
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/rockets" exact component={Rockets} />
-              <Route path="/launches" exact component={Launches} />
-              <Route
-                exact
-                path="/launches/:flightNumber"
-                component={LaunchDetail}
-              />
-            </Switch>
-          </Layout>
-        </div>
-      </FilterProvider>
+      <div>
+        <Layout>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/rockets" exact component={Rockets} />
+            <Route path="/launches" exact component={Launches} />
+            <Route
+              exact
+              path="/launches/:flightNumber"
+              component={LaunchDetail}
+            />
+          </Switch>
+        </Layout>
+      </div>
     </LaunchProvider>
   );
 }

@@ -1,29 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import LaunchService from '../../services/LaunchService';
 
+import LaunchService from '../../services/LaunchService';
 import Launches from '../../components/Launches/Launches';
-import { useFilter } from '../../contexts/FilterContext';
+import { useLaunch } from '../../contexts/LaunchContext';
 import classes from './LaunchesPage.module.css';
 
 const LaunchesPage = () => {
-  const [launchesData, setLaunchesData] = useState([]);
-  const [launchesFilter, setLaunchesFilter] = useState([]);
-  const [offset, setOffset] = useState(0);
-  const { successFilter, rocketFilter, yearFilter } = useFilter();
-  const [loading, setLoading] = useState(false);
-
   const launchPerPage = 20;
+  const {
+    launchesData,
+    setLaunchesData,
+    launchesFilter,
+    loading,
+    offset,
+    setOffset,
+    setLoading,
+    setLaunchesFilter,
+  } = useLaunch();
 
   useEffect(() => {
-    getLaunches();
+    if (offset === launchesData.length) getLaunch();
   }, [offset]);
 
-  useEffect(() => {
-    filterLaunches();
-  }, [successFilter, rocketFilter, yearFilter]);
-
-  function getLaunches() {
+  function getLaunch() {
     setLoading(true);
+    console.log('getLaunch');
+    console.log(`now offset : ${offset}`);
     LaunchService.getAll(launchPerPage, offset)
       .then((res) => {
         setLoading(false);
@@ -40,64 +42,18 @@ const LaunchesPage = () => {
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
       });
   }
 
-  function filterLaunches() {
-    switch (successFilter) {
-      case 'All':
-        setLaunchesFilter(
-          launchesData.filter(
-            (launch) =>
-              launch.rocket.rocket_name
-                .toLowerCase()
-                .includes(rocketFilter.toLowerCase()) &&
-              launch.launch_year
-                .toLowerCase()
-                .includes(yearFilter.toLowerCase())
-          )
-        );
-        break;
-      case 'Success':
-        setLaunchesFilter(
-          launchesData.filter(
-            (launch) =>
-              launch.launch_success &&
-              launch.rocket.rocket_name
-                .toLowerCase()
-                .includes(rocketFilter.toLowerCase()) &&
-              launch.launch_year
-                .toLowerCase()
-                .includes(yearFilter.toLowerCase())
-          )
-        );
-        break;
-      case 'Unsuccess':
-        setLaunchesFilter(
-          launchesData.filter(
-            (launch) =>
-              !launch.launch_success &&
-              launch.rocket.rocket_name
-                .toLowerCase()
-                .includes(rocketFilter.toLowerCase()) &&
-              launch.launch_year
-                .toLowerCase()
-                .includes(yearFilter.toLowerCase())
-          )
-        );
-        break;
-      default:
-        setLaunchesFilter(launchesData);
-    }
-  }
-
-  const checkScroll = async (e) => {
+  const checkScroll = (e) => {
     let bottom =
       e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight < 50;
     if (bottom && !loading && offset < 110) {
+      setLoading(true);
       console.log('bottom');
-      let newOffset = offset + 20;
-      setOffset(newOffset);
+      let newOffSet = offset + launchPerPage;
+      setOffset(newOffSet);
     }
   };
 

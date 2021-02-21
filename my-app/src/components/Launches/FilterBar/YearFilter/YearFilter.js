@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useFilter } from '../../../../contexts/FilterContext';
+import { useLaunch } from '../../../../contexts/LaunchContext';
 import classes from './YearFilter.module.css';
 
 const YearFilter = () => {
-  const { handleYearFilterChange } = useFilter();
+  const { handleYearFilterChange } = useLaunch();
 
   return (
     <div className={classes.YearFilter}>

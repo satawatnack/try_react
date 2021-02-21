@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { useFilter } from '../../../../contexts/FilterContext';
+import { useLaunch } from '../../../../contexts/LaunchContext';
 import classes from './SuccessFilter.module.css';
 
 const options = ['All', 'Success', 'Unsuccess'];
 
 const SuccessFilter = (props) => {
-  const { successFilter, handleSuccessFilterChange } = useFilter();
+  const { successFilter, handleSuccessFilterChange } = useLaunch();
 
   return (
     <div className={classes.SuccessFilter}>

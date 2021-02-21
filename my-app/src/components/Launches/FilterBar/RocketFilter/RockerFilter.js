@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useFilter } from '../../../../contexts/FilterContext';
+import { useLaunch } from '../../../../contexts/LaunchContext';
 import classes from './RocketFilter.module.css';
 
 const RocketFilter = () => {
-  const { handleRocketFilterChange } = useFilter();
+  const { handleRocketFilterChange } = useLaunch();
 
   return (
     <div className={classes.RocketFilter}>
