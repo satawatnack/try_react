@@ -7,32 +7,33 @@ let attachClasses = "py-8 px-8 max-w-sm mx-auto bg-color-red bg-red rounded-xl s
 const RocketCard = (props) => {
     const [cardState, setCardState] = useState(false)
 
-    useEffect( () => {
-        console.log(props.rocket.rocket_name+" BEFORE CONDITION "+cardState)
-        console.log(attachClasses)
-        if(!cardState){
-            console.log(props.rocket.rocket_name+" IF "+cardState)
-            attachClasses = "py-8 px-8 max-w-sm mx-auto bg-color-red bg-red rounded-xl shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6"
-        }else{
-            console.log(props.rocket.rocket_name+" ELSE "+cardState)
-            attachClasses = "py-8 px-8 max-w-sm mx-auto bg-color-red bg-red rounded-xl shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6"
-        }
-    })
+    // useEffect( () => {
+    //     console.log(props.rocket.rocket_name+" BEFORE CONDITION "+cardState)
+    //     console.log(attachClasses)
+    //     if(!cardState){
+    //         console.log(props.rocket.rocket_name+" IF "+cardState)
+    //         attachClasses = "py-8 px-8 max-w-sm mx-auto bg-color-red bg-red rounded-xl shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6"
+    //     }else{
+    //         console.log(props.rocket.rocket_name+" ELSE "+cardState)
+    //         attachClasses = "py-8 px-8 max-w-sm mx-auto bg-color-red bg-red rounded-xl shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6"
+    //     }
+    // })
 
     return(
-        <div className={attachClasses} onClick={() => setCardState(!cardState)}>
-            <div className={classes.Name}>
-                <h4>{props.rocket.rocket_name}</h4>
+        <div className="m-2 w-8/12 h-2/5 bg-white rounded-xl shadow-lg overflow-hidden mx-auto">
+        <div className="md:flex">
+            <div className="md:flex-shrink-0">
+                <img className="h-full w-full object-cover md:w-48" src={props.rocket.flickr_images[0]} alt={props.rocket.rocket_name}/>
             </div>
-            <div className={classes.Container}>
-                <p>
-                    Type: {props.rocket.rocket_type}<br />
-                    Status: {props.rocket.active?"ACTIVE": "INACTIVE"}<br />
-                    ID: {props.rocket.id}<br />
+            <div className="p-8">
+                <a href="#" className="uppercase tracking-wide text-lg text-blue-700 font-serif font-semibold hover:underline">{props.rocket.rocket_name}</a>
+                <p className="block mt-1 text-lg leading-tight font-medium text-black">
+                    {props.rocket.company}, {props.rocket.country}
                 </p>
+                <p className="mt-2 text-gray-500">{props.rocket.description}</p>
             </div>
-            <img src={props.rocket.flickr_images} className={classes.CardImg}/>
         </div>
+    </div>
     )
 }
 
