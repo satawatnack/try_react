@@ -11,7 +11,11 @@ const Launch = (props) => (
       <div className={classes.column}>
         <div className={classes.Launches}>
           {props.launchesData.map((launch) => (
-            <LaunchCard key={launch.mission_name} launch={launch} />
+            <LaunchCard
+              cardClicked={props.cardClicked}
+              key={launch.flight_number}
+              launch={launch}
+            />
           ))}
         </div>
         <Loading showLoading={props.showLoading} />
