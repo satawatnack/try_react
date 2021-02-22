@@ -5,14 +5,18 @@ const RocketDetail = ({ match }) => {
   const [rocket, setRocketsData] = useState([]);
 
   useEffect(() => {
+    let mounted = true;
     RocketsService.get(match.params.rocket_id)
       .then((res) => {
-        setRocketsData(res.data);
-        console.log(res.data);
+        if (mounted) setRocketsData(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
+
+    return function cleanup() {
+      mounted = false;
+    };
   }, []);
 
   return (

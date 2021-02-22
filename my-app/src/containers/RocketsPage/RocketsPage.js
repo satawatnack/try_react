@@ -6,13 +6,18 @@ const RocketsPage = () => {
   const [rocketsData, setRocketsData] = useState([]);
 
   useEffect(() => {
+    let mounted = true;
     RocketsService.getAll(5, 0)
       .then((res) => {
-        setRocketsData(res.data);
+        if (mounted) setRocketsData(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
+
+    return function cleanup() {
+      mounted = false;
+    };
   }, []);
 
   return (

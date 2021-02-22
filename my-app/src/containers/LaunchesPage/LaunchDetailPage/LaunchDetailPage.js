@@ -10,8 +10,10 @@ const LaunchDetailPage = () => {
   let { flightNumber } = useParams();
   const { loading, setLoading } = useLaunch();
   const [launchData, setLaunchDetail] = useState();
+  let mounted = false;
 
   useEffect(() => {
+    mounted = true;
     getData();
   }, []);
 
@@ -20,12 +22,13 @@ const LaunchDetailPage = () => {
       setLoading(true);
       LaunchService.get(flightNumber)
         .then((res) => {
-          setLoading(false);
-          setLaunchDetail(res.data);
+          if (mounted) {
+            setLoading(false);
+            setLaunchDetail(res.data);
+          }
         })
         .catch((err) => {
-          console.log(err);
-          setLoading(false);
+          if (mounted) setLoading(false);
         });
     }
   };

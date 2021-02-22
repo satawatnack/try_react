@@ -8,6 +8,7 @@ import classes from './LaunchesPage.module.css';
 const LaunchesPage = () => {
   const launchPerPage = 10;
   const myRef = createRef();
+  let mounted = false;
 
   const {
     launchesData,
@@ -21,21 +22,28 @@ const LaunchesPage = () => {
   } = useLaunch();
 
   useEffect(() => {
+    mounted = true;
     if (offset === launchesData.length) getLaunch();
+
+    return function cleanup() {
+      mounted = false;
+    };
   }, [offset]);
 
   function getLaunch() {
     setLoading(true);
     LaunchService.getAll(launchPerPage, offset)
       .then((res) => {
-        setLoading(false);
-        if (launchesData.length > 0) {
-          let arr = [...launchesData, ...res.data];
-          setLaunchesData(arr);
-          setLaunchesFilter(arr);
-        } else {
-          setLaunchesData(res.data);
-          setLaunchesFilter(res.data);
+        if (mounted) {
+          setLoading(false);
+          if (launchesData.length > 0) {
+            let arr = [...launchesData, ...res.data];
+            setLaunchesData(arr);
+            setLaunchesFilter(arr);
+          } else {
+            setLaunchesData(res.data);
+            setLaunchesFilter(res.data);
+          }
         }
       })
       .catch((err) => {
