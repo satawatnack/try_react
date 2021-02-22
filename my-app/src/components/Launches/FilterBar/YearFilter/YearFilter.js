@@ -10,7 +10,7 @@ const YearFilter = () => {
     <div className={classes.YearFilter}>
       <input
         type="text"
-        placeholder="Launch Year"
+        placeholder=" Launch Year"
         onChange={handleYearFilterChange}
       />
     </div>

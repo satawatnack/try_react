@@ -10,7 +10,7 @@ const RocketFilter = () => {
     <div className={classes.RocketFilter}>
       <input
         type="text"
-        placeholder="Search Rockets"
+        placeholder=" Search Rockets"
         onChange={handleRocketFilterChange}
       />
     </div>
