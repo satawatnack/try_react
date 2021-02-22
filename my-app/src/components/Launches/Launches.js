@@ -10,8 +10,6 @@ const Launch = (props) => (
       <div className="flex justify-center m-8">
         <FilterBar />
       </div>
-
-      <Loading showLoading={props.showLoading} />
       <div className="flex justify-center">
         <div className="md:w-6/12 w-11/12">
           {props.launchesData.map((launch) => (
@@ -23,6 +21,7 @@ const Launch = (props) => (
           ))}
         </div>
       </div>
+      <Loading showLoading={props.showLoading} />
     </div>
   </div>
 );

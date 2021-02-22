@@ -1,4 +1,4 @@
 .LaunchesPage {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 50px);
 	overflow-y: auto;
 }
