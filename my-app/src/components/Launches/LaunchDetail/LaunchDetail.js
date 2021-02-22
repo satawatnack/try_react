@@ -13,21 +13,28 @@ const LaunchDetail = (props) => {
           <button
             type="button"
             onClick={() => history.push('/launches')}
-            className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-gray-700 hover:bg-gray-900 hover:shadow-lg"
+            className="focus:outline-none text-white text-lg py-2.5 px-5 rounded-md bg-gray-700 hover:bg-gray-900 hover:shadow-lg"
           >
-            go back
+            &#10094;
           </button>
         </div>
 
         <Slider imgs={props.launchesData?.links?.flickr_images} />
-        <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-          <div className="px-4 py-5 sm:px-6">
-            <h3 className="text-lg leading-6 font-medium text-gray-900">
-              {props.launchesData?.mission_name}
-            </h3>
-            <p className="mt-1 max-w-2xl text-sm text-gray-500">
-              {props.launchesData?.details}
-            </p>
+
+        <div className="bg-gradient-to-r from-gray-800 to-gray-600 shadow overflow-hidden sm:rounded-lg">
+          <div className="px-4 py-5 sm:px-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              {' '}
+              <h3 className="text-lg leading-6 font-medium text-white">
+                {props.launchesData?.mission_name}
+              </h3>
+              <p className="mt-1 max-w-2xl text-sm text-gray-300">
+                {props.launchesData?.details}
+              </p>
+            </div>
+            <div className="ml-52 w-2/5 sm:ml-40">
+              <img src={props.launchesData?.links?.mission_patch} />
+            </div>
           </div>
           <div className="border-t border-gray-200">
             <dl>
@@ -80,14 +87,6 @@ const LaunchDetail = (props) => {
                 </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   {props.launchesData?.launch_year}
-                </dd>
-              </div>
-              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">
-                  Launch Date
-                </dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {props.launchesData?.launch_date_utc}
                 </dd>
               </div>
             </dl>
