@@ -18,17 +18,15 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/rockets" exact component={Rockets} />
+          <Route path="/rockets/:rocket_id" component={RocketDetail} />
 
           <LaunchProvider>
             <Route path="/launches" exact component={Launches} />
             <Route
-              exact
               path="/launches/:flightNumber"
               component={LaunchDetailPage}
             />
           </LaunchProvider>
-
-          <Route exact path="/rockets/:rocket_id" component={RocketDetail} />
         </Switch>
       </Layout>
     </div>
