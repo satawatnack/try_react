@@ -17,7 +17,7 @@ const RocketDetail = ({ match }) => {
   return (
     <>
     {/* Entrie Screen */}
-    <div className="bg-gray-200 w-screen h-full flex">
+    <div className="bg-gray-200 w-screen flex">
       {/* First Panel */}
         <div className="w-1/4 h-screen m-2">
         <div className="h-1/6">
