@@ -39,9 +39,9 @@ const Home = () => {
                     <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
    
-                        <h6 className="text-xl font-semibold">Awarded Agency</h6>
-                        <p className="mt-2 mb-4 text-gray-600">
-                        Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.
+                        <h6 className="text-xl font-semibold">Founded</h6>
+                        <p className="mt-2 mb-4 text-gray-600 text-2xl">
+                        2002
                         </p>
                     </div>
                     </div>
@@ -51,11 +51,11 @@ const Home = () => {
                     <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
    
-                        <h6 className="text-xl font-semibold">
-                        Free Revisions
+                        <h6 className="text-xl font-semibold font-serif">
+                        Empolyees
                         </h6>
-                        <p className="mt-2 mb-4 text-gray-600">
-                        Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.
+                        <p className="mt-2 mb-4 text-gray-600 text-2xl">
+                        7,600
                         </p>
                     </div>
                     </div>
@@ -64,39 +64,33 @@ const Home = () => {
                 <div className="pt-6 w-full md:w-4/12 px-4 text-center">
                     <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
-                        <h6 className="text-xl font-semibold">
-                        Verified Company
+                        <h6 className="text-xl font-semibold font-serif">
+                        Headquarters
                         </h6>
-                        <p className="mt-2 mb-4 text-gray-600">
-                        Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!
+                        <p className="mt-2 mb-4 text-gray-600 text-2xl">
+                        Rocket Road, Hawthorne California
                         </p>
                     </div>
                     </div>
                 </div>
                 </div>
 
-
                 <div className="flex flex-wrap items-center mt-10">
                 <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
 
                     <h3 className="text-3xl mb-2 font-semibold leading-normal">
-                    Working with us is a pleasure
+                    More Information
                     </h3>
                     <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
-                    Don let your uses guess by attaching tooltips and popoves
-                    to any element. Just make sure you enable them first via
-                    JavaScript.
-                    </p>
-                    <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
-                    The kit comes with three pre-built pages to help you get
-                    started faster. You can change the text and images and
-                    you good to go. Just make sure you enable them first via
-                    JavaScript.
+                    Website: <a href="www.spacex.com" className="hover:underline font-bold">spacex.com</a> <br/>
+                    Flickr: <a href="www.flickr.com/photos/spacex/" className="hover:underline font-bold">flickr.com/photos/spacex</a><br/>
+                    Twitter: <a href="www.twitter.com/SpaceX" className="hover:underline font-bold">twitter.com/SpaceX</a><br/>
+                    Elon Musk Twitter: <a href="www.twitter.com/elonmusk" className="hover:underline font-bold">twitter.com/elonmusk</a><br/>
                     </p>
                 </div>
 
                 <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                    <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
+                    <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blue-900">
                     <img
                         alt="..."
                         src="https://farm9.staticflickr.com/8617/16789019815_f99a165dc5_o.jpg"
@@ -115,7 +109,7 @@ const Home = () => {
                         >
                         <polygon
                             points="-30,95 583,95 583,65"
-                            className="text-blue-400 fill-current"
+                            className=" bg-blue-900 fill-current"
                         ></polygon>
                         </svg>
                         <h4 className="text-xl font-bold text-white">
