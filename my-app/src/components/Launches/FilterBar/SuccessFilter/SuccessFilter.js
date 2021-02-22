@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { useLaunch } from '../../../../contexts/LaunchContext';
-import classes from './SuccessFilter.module.css';
 
 const options = ['All', 'Success', 'Unsuccess'];
 
@@ -9,7 +8,7 @@ const SuccessFilter = (props) => {
   const { successFilter, handleSuccessFilterChange } = useLaunch();
 
   return (
-    <div className={classes.SuccessFilter}>
+    <div className="ml-1">
       <label htmlFor="select">launch success : </label>
       <select
         value={successFilter}

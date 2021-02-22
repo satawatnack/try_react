@@ -13,7 +13,7 @@ const RocketDetail = ({ match }) => {
         console.log(err);
       });
   }, []);
-
+  
   return (
     <>
     {/* Entrie Screen */}

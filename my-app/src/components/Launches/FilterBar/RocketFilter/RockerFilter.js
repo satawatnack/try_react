@@ -1,16 +1,15 @@
 import React from 'react';
 
 import { useLaunch } from '../../../../contexts/LaunchContext';
-import classes from './RocketFilter.module.css';
 
 const RocketFilter = () => {
   const { handleRocketFilterChange } = useLaunch();
 
   return (
-    <div className={classes.RocketFilter}>
+    <div>
       <input
         type="text"
-        placeholder="Search Rockets"
+        placeholder=" Search Rockets"
         onChange={handleRocketFilterChange}
       />
     </div>
