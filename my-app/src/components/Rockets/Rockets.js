@@ -1,6 +1,5 @@
 import React from 'react';
 import RocketCard from './RocketCard/RocketCard';
-import classes from './Rockets.css';
 
 const Rockets = (props) => {
   return (
