@@ -7,7 +7,7 @@ import Home from './containers/HomePage/HomePage';
 import Rockets from './containers/RocketsPage/RocketsPage';
 import RocketDetail from './containers/RocketsPage/RocketDetail/RocketDetail';
 import Launches from './containers/LaunchesPage/LaunchesPage';
-import LaunchDetailPage from './containers/LaunchDetailPage/LaunchDetailPage';
+import LaunchDetailPage from './containers/LaunchesPage/LaunchDetailPage/LaunchDetailPage';
 
 import { LaunchProvider } from './contexts/LaunchContext';
 
