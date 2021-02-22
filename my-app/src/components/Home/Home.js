@@ -90,7 +90,7 @@ const Home = () => {
                 </div>
 
                 <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                    <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blue-900">
+                    <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blue-900">
                     <img
                         alt="..."
                         src="https://farm9.staticflickr.com/8617/16789019815_f99a165dc5_o.jpg"
