@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, createRef } from 'react';
 
 import LaunchService from '../../services/LaunchService';
 import Launches from '../../components/Launches/Launches';
@@ -7,6 +7,8 @@ import classes from './LaunchesPage.module.css';
 
 const LaunchesPage = () => {
   const launchPerPage = 20;
+  const myRef = createRef();
+
   const {
     launchesData,
     setLaunchesData,
@@ -49,6 +51,9 @@ const LaunchesPage = () => {
   const checkScroll = (e) => {
     let bottom =
       e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight < 50;
+
+    // console.log(e.target.scrollTop);
+
     if (bottom && !loading && offset < 110) {
       setLoading(true);
       console.log('bottom');
@@ -58,7 +63,7 @@ const LaunchesPage = () => {
   };
 
   return (
-    <div onScroll={checkScroll} className={classes.LaunchesPage}>
+    <div onScroll={checkScroll} ref={myRef} className={classes.LaunchesPage}>
       <Launches showLoading={loading} launchesData={launchesFilter} />
     </div>
   );

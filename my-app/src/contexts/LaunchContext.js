@@ -13,6 +13,7 @@ export const LaunchProvider = (props) => {
   const [launchesFilter, setLaunchesFilter] = useState([]);
   const [loading, setLoading] = useState(false);
   const [offset, setOffset] = useState(0);
+  const [scrollYStorage, setScrollYStorage] = useState(0);
 
   const [successFilter, setSuccessFilter] = useState('All');
   const [rocketFilter, setRocketFilter] = useState('');
@@ -99,6 +100,8 @@ export const LaunchProvider = (props) => {
         setOffset,
         setLaunchesData,
         setLaunchesFilter,
+        scrollYStorage,
+        setScrollYStorage,
       }}
     >
       {props.children}

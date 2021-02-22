@@ -5,7 +5,7 @@ const getAll = (limit = 0, offset = 0) => {
 };
 
 const get = (flight_number) => {
-  return http.get(`launches'/${flight_number}`);
+  return http.get(`launches/${flight_number}`);
 };
 
 export default {
