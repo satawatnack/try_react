@@ -6,7 +6,7 @@ import { useLaunch } from '../../contexts/LaunchContext';
 import classes from './LaunchesPage.module.css';
 
 const LaunchesPage = () => {
-  const launchPerPage = 20;
+  const launchPerPage = 10;
   const myRef = createRef();
 
   const {
@@ -26,15 +26,11 @@ const LaunchesPage = () => {
 
   function getLaunch() {
     setLoading(true);
-    console.log('getLaunch');
-    console.log(`now offset : ${offset}`);
     LaunchService.getAll(launchPerPage, offset)
       .then((res) => {
         setLoading(false);
         if (launchesData.length > 0) {
           let arr = [...launchesData, ...res.data];
-
-          console.log(arr);
           setLaunchesData(arr);
           setLaunchesFilter(arr);
         } else {
@@ -52,11 +48,8 @@ const LaunchesPage = () => {
     let bottom =
       e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight < 50;
 
-    // console.log(e.target.scrollTop);
-
     if (bottom && !loading && offset < 110) {
       setLoading(true);
-      console.log('bottom');
       let newOffSet = offset + launchPerPage;
       setOffset(newOffSet);
     }
