@@ -9,7 +9,7 @@ const LaunchDetail = (props) => {
   return props.launchesData ? (
     <div className="flex justify-center">
       <div className="grid grid-cols-1 md:w-3/6">
-        <div className="inline-block mr-2 mt-2 mb-8 ml-3">
+        <div className="inline-block m-3 my-5">
           <button
             type="button"
             onClick={() => history.push('/launches')}
