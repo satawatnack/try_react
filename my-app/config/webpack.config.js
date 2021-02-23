@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const UnusedWebpackPlugin = require('unused-webpack-plugin');
 const webpack = require('webpack');
 const resolve = require('resolve');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
@@ -349,6 +350,14 @@ module.exports = function (webpackEnv) {
           paths.appPackageJson,
           reactRefreshOverlayEntry,
         ]),
+        new UnusedWebpackPlugin({
+          // Source directories
+          directories: [path.join(__dirname, 'src')],
+          // Exclude patterns
+          exclude: ['*.test.js'],
+          // Root directory (optional)
+          root: __dirname,
+        }),
       ],
     },
     resolveLoader: {
