@@ -124,7 +124,7 @@ const Home = () => {
                   alt="rocketImg"
                   width="600px"
                   height="800px"
-                  src={process.env.PUBLIC_URL + '/rocket.jpg'}
+                  src="https://farm9.staticflickr.com/8617/16789019815_f99a165dc5_m.jpg"
                   className="w-full h-auto align-middle rounded-t-lg"
                 />
                 <blockquote className="relative p-8 mb-4">
