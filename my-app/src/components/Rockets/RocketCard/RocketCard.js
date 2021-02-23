@@ -17,9 +17,9 @@ const RocketCard = (props) => {
           <div className="md:flex">
             <div className="md:flex-shrink-0 m-5">
               <img
-                className="h-36 w-32 rounded-xl"
-                height="480"
-                width="320"
+                className=" w-80 rounded-lg"
+                height="400"
+                width="300"
                 src={resizeImg}
                 alt={props.rocket.rocket_name}
               />
