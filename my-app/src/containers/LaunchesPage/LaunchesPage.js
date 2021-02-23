@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useLayoutEffect, createRef } from 'react';
 
 import LaunchService from '../../services/LaunchService';
-import Launches from '../../components/Launches/Launches';
 import { useLaunch } from '../../contexts/LaunchContext';
 import classes from './LaunchesPage.module.css';
+
+const Launches = React.lazy(() => import('../../components/Launches/Launches'));
 
 const LaunchesPage = () => {
   const launchPerPage = 10;
