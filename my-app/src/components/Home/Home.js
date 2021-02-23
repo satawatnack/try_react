@@ -143,12 +143,14 @@ const Home = () => {
                     ></polygon>
                   </svg>
                   <p className="text-xl font-bold text-white">
-                    Top Notch Services
+                    RESERVE YOUR RIDE ONLINE
                   </p>
                   <p className="text-md font-light mt-2 text-white">
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens.
+                    Find all the information you need to make a reservation
+                    online, everything from port size to technical
+                    specifications to licensing information. Once your
+                    reservation request is approved, SpaceX will provide you
+                    with a welcome package outlining next steps for launch.
                   </p>
                 </blockquote>
               </div>
