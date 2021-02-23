@@ -1,8 +1,10 @@
 import { React, useState, useEffect } from 'react';
 import RocketsService from '../../../services/RocketsService';
+import { Link, useHistory } from 'react-router-dom';
 
 const RocketDetail = ({ match }) => {
   const [rocket, setRocketsData] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     let mounted = true;
@@ -22,16 +24,21 @@ const RocketDetail = ({ match }) => {
   return (
     <>
       {/* Entrie Screen */}
-      <div className="bg-gray-200 w-screen flex">
-        {/* First Panel */}
-        <div className="w-1/4 h-screen m-2">
+      <div className="bg-gray-200 flex justify-center flex-wrap">
+        <button
+            type="button"
+            onClick={() => history.push('/rockets')}
+            className="focus:outline-none bg-gradient-to-r text-white from-blue-900 to-gray-600 rounded-lg p-2 m-2 font-semibold h-10 hover:underline  hover:shadow-lg"
+        >Back</button>
+        {/* Left Panel */}
+        <div className="h-auto m-2 w-full lg:w-7/12 xl:w-1/4">
           <div className="h-1/6">
             {/* First Block */}
-            <div className="p-3 pt-8 pb-12 text-center font-bold text-2xl bg-blue-100 rounded-xl">
-              <p className="font-serif">
+            <div className="p-3 pt-8 pb-12 text-center font-bold text-2xl bg-gradient-to-r from-blue-900 to-gray-600 rounded-xl">
+              <p className="font-serif text-white">
                 {rocket?.rocket_name ?? 'Rocket Name'}
               </p>
-              <p className="text-lg p-2 font-normal text-gray-600">
+              <p className="text-lg p-2 font-normal text-gray-200">
                 {rocket?.company ?? 'Company'}
                 <br /> {rocket?.country ?? 'Country'}
               </p>
@@ -46,7 +53,7 @@ const RocketDetail = ({ match }) => {
                 {rocket?.first_flight ?? 'First Flight Date'}
               </p>
             </div>
-            <div className="m-3 mb-0 mt-0mb-3 mx-auto border-t p-2 px-0 py-3.5 text-sm  font-serif">
+            <div className="m-3 mb-0 mt-0 mx-auto border-t p-2 px-0 py-3.5 text-sm  font-serif">
               Status
               <p className="p-2 text-md font-sans font-semibold">
                 {rocket?.active ?? '-' ? 'Active' : 'Inactive'}
@@ -79,7 +86,7 @@ const RocketDetail = ({ match }) => {
         </div>
 
         {/* Center Panel */}
-        <div className="w-1/2 h-screen flex-col justify-center m-2">
+        <div className="h-auto flex-col justify-center m-2 w-full lg:w-7/12 xl:w-2/5">
           <div>
             {/* Image */}
             <img
@@ -96,19 +103,20 @@ const RocketDetail = ({ match }) => {
           </div>
         </div>
 
-        {/* Left Panel */}
-        <div className="w-1/4 h-screen m-2">
+        {/* Right Panel */}
+        <div className="w-full lg:w-7/12 xl:w-1/4 h-auto m-2">
           <div className="h-1/6">
             {/* First Block */}
-            <div className="p-3 pt-8 pb-12 text-center font-serif text-xl font-bold bg-blue-100 rounded-xl">
-              Engine Type{' '}
-              <p className="text-lg p-2 pb-0 font-sans text-gray-600 font-normal">
+            <div className="p-3 pt-8 pb-12 text-center text-white text-xl font-bold bg-gradient-to-r from-gray-600 to-blue-900 rounded-xl">
+              <p className="text-xl font-serif pb-0 font-bold text-white font-normal">
                 {rocket?.engines?.type ?? 'Engine Type'}
               </p>
-              <p className="text-lg pt-0 font-sans text-gray-600 font-normal">
+              <p className="text-xl pt-0 font-serif text-white font-normal">
                 {' '}
                 version {rocket?.engines?.version ?? '-'}{' '}
               </p>
+              <p className="text-gray-200 font-sans font-normal text-lg mt-2">Engine Type{' '}</p>
+              
             </div>
           </div>
           {/* Second Block */}

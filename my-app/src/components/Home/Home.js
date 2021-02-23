@@ -39,7 +39,7 @@ const Home = () => {
                     <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
    
-                        <h6 className="text-xl font-semibold">Founded</h6>
+                        <h6 className="text-xl font-semibold font-serif">Founded</h6>
                         <p className="mt-2 mb-4 text-gray-600 text-2xl">
                         2002
                         </p>
