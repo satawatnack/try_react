@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RocketsService from '../../services/RocketsService';
-import Rockets from '../../components/Rockets/Rockets';
+
+const Rockets = React.lazy(() => import('../../components/Rockets/Rockets'));
 
 const RocketsPage = () => {
   const [rocketsData, setRocketsData] = useState([]);

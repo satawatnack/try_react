@@ -4,7 +4,9 @@ import { useHistory, useParams } from 'react-router-dom';
 import LaunchService from '../../../services/LaunchService';
 import { useLaunch } from '../../../contexts/LaunchContext';
 
-import LaunchDetail from '../../../components/Launches/LaunchDetail/LaunchDetail';
+const LaunchDetail = React.lazy(() =>
+  import('../../../components/Launches/LaunchDetail/LaunchDetail')
+);
 
 const LaunchDetailPage = () => {
   let { flightNumber } = useParams();
