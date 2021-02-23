@@ -16,8 +16,8 @@ const LaunchCard = (props) => {
       >
         <div className="grid grid-cols-2">
           <div>
-            <h3>No : {props.launch?.flight_number ?? ''}</h3>
-            <h5>Mission : {props.launch?.mission_name ?? ''}</h5>
+            <p>No : {props.launch?.flight_number ?? ''}</p>
+            <p>Mission : {props.launch?.mission_name ?? ''}</p>
             <ul>
               <li>Rocket : {props.launch?.rocket?.rocket_name ?? ''}</li>
               <li>
@@ -34,7 +34,12 @@ const LaunchCard = (props) => {
             </ul>
           </div>
           <div className="sm:ml-20 ml-5 md:w-36 w-32">
-            <img width="160" src={props.launch?.links?.mission_patch_small} />
+            <img
+              width="160"
+              height="160"
+              alt={props.launch?.links?.mission_patch_small ?? 'defaultImg'}
+              src={props.launch?.links?.mission_patch_small}
+            />
           </div>
         </div>
       </Link>

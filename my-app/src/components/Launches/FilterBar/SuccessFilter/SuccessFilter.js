@@ -8,8 +8,8 @@ const SuccessFilter = (props) => {
   const { successFilter, handleSuccessFilterChange } = useLaunch();
 
   return (
-    <div className="ml-1">
-      <label htmlFor="select">launch success : </label>
+    <div className="">
+      <label htmlFor="select">| launch success : </label>
       <select
         value={successFilter}
         onChange={handleSuccessFilterChange}
@@ -22,7 +22,8 @@ const SuccessFilter = (props) => {
             </option>
           );
         })}
-      </select>
+      </select>{' '}
+      |
     </div>
   );
 };

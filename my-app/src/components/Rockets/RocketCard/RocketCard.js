@@ -1,22 +1,23 @@
-import { React } from 'react';
+import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 
 const RocketCard = (props) => {
   let { url } = useRouteMatch();
+
   let rocketImg = props.rocket?.flickr_images?.[0] ?? '';
   let resizeImg =
     rocketImg && (rocketImg[8] === 'f' || rocketImg[8] === 'l')
-      ? `${rocketImg.slice(0, -5)}m.jpg`
-      : `${rocketImg.slice(0, -4)}m.jpg`;
+      ? `${rocketImg.slice(0, -5)}s.jpg`
+      : `${rocketImg.slice(0, -4)}s.jpg`;
 
   return (
     <>
-      <div className="m-4  bg-white rounded-xl shadow-lg overflow-hidden mx-auto sm:w-2/4 w-10/12">
+      <div className="m-4 bg-white rounded-xl shadow-lg overflow-hidden mx-auto sm:w-2/4 w-10/12">
         <Link to={`${url}/${props.rocket?.rocket_id ?? ''}`}>
           <div className="md:flex">
-            <div className="md:flex-shrink-0">
+            <div className="md:flex-shrink-0 m-5">
               <img
-                className="object-cover h-full"
+                className="h-32 w-32 rounded-xl"
                 height="300"
                 width="320"
                 src={resizeImg}

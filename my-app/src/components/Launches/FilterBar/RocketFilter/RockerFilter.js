@@ -7,7 +7,9 @@ const RocketFilter = () => {
 
   return (
     <div>
+      <label id="Rockets">| </label>
       <input
+        id="Rockets"
         type="text"
         placeholder=" Search Rockets"
         onChange={handleRocketFilterChange}

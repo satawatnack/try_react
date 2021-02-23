@@ -7,8 +7,10 @@ const YearFilter = () => {
 
   return (
     <div>
+      <label id="Year">| </label>
       <input
         type="text"
+        id="Year"
         placeholder=" Launch Year"
         onChange={handleYearFilterChange}
       />

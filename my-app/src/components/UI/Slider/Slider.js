@@ -7,6 +7,7 @@ const Slider = (props) =>
         {props.imgs?.map((url, index) => (
           <img
             className="w-100 max-h-80 object-cover mr-3 rounded-lg"
+            alt={url ?? 'defaultImg'}
             key={index}
             src={url}
           />

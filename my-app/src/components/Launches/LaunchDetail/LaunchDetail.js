@@ -34,7 +34,10 @@ const LaunchDetail = (props) => {
               </p>
             </div>
             <div className="ml-52 w-2/5 sm:ml-40">
-              <img src={props.launchesData?.links?.mission_patch_small} />
+              <img
+                alt={props.launchesData?.links?.mission_patch_small ?? ''}
+                src={props.launchesData?.links?.mission_patch_small}
+              />
             </div>
           </div>
           <div className="border-t border-gray-200">
@@ -74,11 +77,11 @@ const LaunchDetail = (props) => {
                 </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   {launch_success ? (
-                    <span className="text-green-400">success</span>
+                    <span className="text-green-600">success</span>
                   ) : launch_success === null ? (
                     ''
                   ) : (
-                    <span className="text-red-400">unsuccess</span>
+                    <span className="text-red-600">unsuccess</span>
                   )}
                 </dd>
               </div>
