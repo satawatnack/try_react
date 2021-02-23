@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useRouteMatch, useHistory } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import classes from './LaunchCard.module.css';
 
 const LaunchCard = (props) => {

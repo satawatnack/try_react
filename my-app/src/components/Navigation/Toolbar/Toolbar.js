@@ -1,9 +1,14 @@
 import React from 'react';
 
 import classes from './Toolbar.module.css';
-import Logo from '../../Logo/Logo';
-import NavigationItems from '../NavigationItems/NavigationItems';
-import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
+
+const Logo = React.lazy(() => import('../../Logo/Logo'));
+const NavigationItems = React.lazy(() =>
+  import('../NavigationItems/NavigationItems')
+);
+const DrawerToggle = React.lazy(() =>
+  import('../SideDrawer/DrawerToggle/DrawerToggle')
+);
 
 const toolbar = (props) => (
   <header className={classes.Toolbar}>

@@ -1,10 +1,13 @@
 import React from 'react';
 
-import Logo from '../../Logo/Logo';
-import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.module.css';
-import Backdrop from '../../UI/Backdrop/Backdrop';
-import Auxx from '../../../hoc/Auxx';
+
+const Logo = React.lazy(() => import('../../Logo/Logo'));
+const NavigationItems = React.lazy(() =>
+  import('../NavigationItems/NavigationItems')
+);
+const Backdrop = React.lazy(() => import('../../UI/Backdrop/Backdrop'));
+const Auxx = React.lazy(() => import('../../../hoc/Auxx'));
 
 const SideDrawer = (props) => {
   let attachedClasses = [classes.SideDrawer, classes.Close];

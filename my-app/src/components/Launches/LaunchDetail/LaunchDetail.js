@@ -1,7 +1,8 @@
 import React from 'react';
-import Loading from '../../UI/Loading/Loading';
 import { Link, useHistory } from 'react-router-dom';
 import Slider from '../../UI/Slider/Slider';
+
+const Loading = React.lazy(() => import('../../UI/Loading/Loading'));
 
 const LaunchDetail = (props) => {
   const history = useHistory();

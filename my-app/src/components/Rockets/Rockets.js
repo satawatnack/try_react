@@ -1,5 +1,6 @@
 import React from 'react';
-import RocketCard from './RocketCard/RocketCard';
+
+const RocketCard = React.lazy(() => import('./RocketCard/RocketCard'));
 
 const Rockets = (props) => {
   return (

@@ -1,8 +1,5 @@
-import { React, useState, useEffect } from 'react';
+import { React } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
-
-let attachClasses =
-  'py-8 px-8 max-w-sm mx-auto bg-color-red bg-red rounded-xl shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6';
 
 const RocketCard = (props) => {
   let { url } = useRouteMatch();

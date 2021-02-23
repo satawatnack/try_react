@@ -1,8 +1,8 @@
 import React from 'react';
 
-import LaunchCard from './LaunchCard/LaunchCard';
-import FilterBar from './FilterBar/FilterBar';
-import Loading from '../UI/Loading/Loading';
+const LaunchCard = React.lazy(() => import('./LaunchCard/LaunchCard'));
+const FilterBar = React.lazy(() => import('./FilterBar/FilterBar'));
+const Loading = React.lazy(() => import('../UI/Loading/Loading'));
 
 const Launch = (props) => (
   <div className="flex-col justify-center">
