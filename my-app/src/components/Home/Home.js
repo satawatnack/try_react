@@ -123,6 +123,7 @@ const Home = () => {
               <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blue-900">
                 <img
                   alt="rocketImg"
+                  width="160"
                   src={process.env.PUBLIC_URL + '/rocket.jpg'}
                   className="w-full h-auto align-middle rounded-t-lg"
                 />
