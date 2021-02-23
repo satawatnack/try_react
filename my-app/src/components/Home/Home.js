@@ -124,7 +124,7 @@ const Home = () => {
                 <img
                   alt="rocketImg"
                   src={process.env.PUBLIC_URL + '/rocket.jpg'}
-                  className="w-full h-full align-middle rounded-t-lg"
+                  className="w-full h-auto align-middle rounded-t-lg"
                 />
                 <blockquote className="relative p-8 mb-4">
                   <svg
