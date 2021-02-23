@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
-import Auxx from '../../hoc/Auxx';
 import classes from './Layout.module.css';
-import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+
+const Auxx = React.lazy(() => import('../../hoc/Auxx'));
+const Toolbar = React.lazy(() =>
+  import('../../components/Navigation/Toolbar/Toolbar')
+);
+const SideDrawer = React.lazy(() =>
+  import('../../components/Navigation/SideDrawer/SideDrawer')
+);
 
 class Layout extends Component {
   state = {

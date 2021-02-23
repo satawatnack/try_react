@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <>
-      {/* First Landing Component - backgound and desc. */}
       <div
         className="relative pt-4 pb-16 flex content-center items-center justify-center"
         style={{
