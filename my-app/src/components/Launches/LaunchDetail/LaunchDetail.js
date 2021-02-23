@@ -34,7 +34,7 @@ const LaunchDetail = (props) => {
               </p>
             </div>
             <div className="ml-52 w-2/5 sm:ml-40">
-              <img src={props.launchesData?.links?.mission_patch} />
+              <img src={props.launchesData?.links?.mission_patch_small} />
             </div>
           </div>
           <div className="border-t border-gray-200">

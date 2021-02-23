@@ -1,10 +1,16 @@
 import { React, useState, useEffect } from 'react';
 import RocketsService from '../../../services/RocketsService';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const RocketDetail = ({ match }) => {
   const [rocket, setRocketsData] = useState([]);
   const history = useHistory();
+
+  let rocketImg = rocket?.flickr_images?.[0] ?? '';
+  let resizeImg =
+    rocketImg && (rocketImg[8] === 'f' || rocketImg[8] === 'l')
+      ? `${rocketImg.slice(0, -5)}m.jpg`
+      : `${rocketImg.slice(0, -4)}m.jpg`;
 
   useEffect(() => {
     let mounted = true;
@@ -24,17 +30,19 @@ const RocketDetail = ({ match }) => {
   return (
     <>
       {/* Entrie Screen */}
-      <div className="bg-gray-200 flex justify-center flex-wrap">
+      <div className="bg-gray-200 flex">
         <button
-            type="button"
-            onClick={() => history.push('/rockets')}
-            className="focus:outline-none bg-gradient-to-r text-white from-blue-900 to-gray-600 rounded-lg p-2 m-2 font-semibold h-10 hover:underline  hover:shadow-lg"
-        >Back</button>
+          type="button"
+          onClick={() => history.push('/launches')}
+          className="focus:outline-none h-12 m-2 mt-3 text-white text-lg py-2.5 px-5 rounded-md bg-gray-700 hover:bg-gray-900 hover:shadow-lg"
+        >
+          &#10094;
+        </button>
         {/* Left Panel */}
         <div className="h-auto m-2 w-full lg:w-7/12 xl:w-1/4">
           <div className="h-1/6">
             {/* First Block */}
-            <div className="p-3 pt-8 pb-12 text-center font-bold text-2xl bg-gradient-to-r from-blue-900 to-gray-600 rounded-xl">
+            <div className="p-3 pt-8 pb-12 text-center font-bold text-2xl bg-gradient-to-r from-gray-800 to-gray-600 rounded-xl">
               <p className="font-serif text-white">
                 {rocket?.rocket_name ?? 'Rocket Name'}
               </p>
@@ -91,7 +99,10 @@ const RocketDetail = ({ match }) => {
             {/* Image */}
             <img
               className="h-1/2 w-full rounded-lg"
-              src={rocket?.flickr_images?.[0] ?? 'Empty Image'}
+              height="400"
+              width="300"
+              alt={rocket?.rocket_name ?? 'Empty Image'}
+              src={resizeImg}
             />
             {/* Second Block */}
             <div className="p-5 rounded-xl bg-white mt-3 shadow-lg text-md font-serif">
@@ -107,7 +118,7 @@ const RocketDetail = ({ match }) => {
         <div className="w-full lg:w-7/12 xl:w-1/4 h-auto m-2">
           <div className="h-1/6">
             {/* First Block */}
-            <div className="p-3 pt-8 pb-12 text-center text-white text-xl font-bold bg-gradient-to-r from-gray-600 to-blue-900 rounded-xl">
+            <div className="p-3 pt-8 pb-12 text-center text-white text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 rounded-xl">
               <p className="text-xl font-serif pb-0 font-bold text-white font-normal">
                 {rocket?.engines?.type ?? 'Engine Type'}
               </p>
@@ -115,8 +126,9 @@ const RocketDetail = ({ match }) => {
                 {' '}
                 version {rocket?.engines?.version ?? '-'}{' '}
               </p>
-              <p className="text-gray-200 font-sans font-normal text-lg mt-2">Engine Type{' '}</p>
-              
+              <p className="text-gray-200 font-sans font-normal text-lg mt-2">
+                Engine Type{' '}
+              </p>
             </div>
           </div>
           {/* Second Block */}

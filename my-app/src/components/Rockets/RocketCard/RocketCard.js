@@ -3,20 +3,27 @@ import { Link, useRouteMatch } from 'react-router-dom';
 
 const RocketCard = (props) => {
   let { url } = useRouteMatch();
+  let rocketImg = props.rocket?.flickr_images?.[0] ?? '';
+  let resizeImg =
+    rocketImg && (rocketImg[8] === 'f' || rocketImg[8] === 'l')
+      ? `${rocketImg.slice(0, -5)}m.jpg`
+      : `${rocketImg.slice(0, -4)}m.jpg`;
 
   return (
     <>
-      <div className="m-2  bg-white rounded-xl shadow-lg overflow-hidden mx-auto">
+      <div className="m-4  bg-white rounded-xl shadow-lg overflow-hidden mx-auto sm:w-2/4 w-10/12">
         <Link to={`${url}/${props.rocket?.rocket_id ?? ''}`}>
           <div className="md:flex">
             <div className="md:flex-shrink-0">
               <img
-                className="h-full w-full object-cover md:w-48"
-                src={props.rocket.flickr_images[0]}
+                className="object-cover h-full"
+                height="300"
+                width="320"
+                src={resizeImg}
                 alt={props.rocket.rocket_name}
               />
             </div>
-            <div className="p-8">
+            <div className="p-4">
               <span className="uppercase tracking-wide text-lg text-blue-700 font-serif font-semibold hover:underline">
                 {props.rocket.rocket_name}
               </span>

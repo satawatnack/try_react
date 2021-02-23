@@ -30,7 +30,11 @@ function App() {
       <React.Suspense
         fallback={
           <div className={`${classes.fullPageLoader} ${classes.Logo}`}>
-            <img width="50" src="./astronaut.png" alt="astronaut" />
+            <img
+              width="50"
+              src={process.env.PUBLIC_URL + '/astronaut.png'}
+              alt="astronaut"
+            />
           </div>
         }
       >
@@ -38,7 +42,11 @@ function App() {
           <React.Suspense
             fallback={
               <div className={`${classes.fullPageLoader} ${classes.Logo}`}>
-                <img width="50" src="./astronaut.png" alt="astronaut" />
+                <img
+                  width="50"
+                  src={process.env.PUBLIC_URL + '/astronaut.png'}
+                  alt="astronaut2"
+                />
               </div>
             }
           >

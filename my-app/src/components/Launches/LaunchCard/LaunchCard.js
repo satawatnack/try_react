@@ -34,7 +34,7 @@ const LaunchCard = (props) => {
             </ul>
           </div>
           <div className="sm:ml-20 ml-5 md:w-36 w-32">
-            <img width="160" src={props.launch?.links?.mission_patch} />
+            <img width="160" src={props.launch?.links?.mission_patch_small} />
           </div>
         </div>
       </Link>
