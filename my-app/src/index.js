@@ -8,9 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 const app = (
   <BrowserRouter>
-    <React.Suspense fallback={<span>Loading...</span>}>
-      <App />
-    </React.Suspense>
+    <App />
   </BrowserRouter>
 );
 ReactDOM.render(app, document.getElementById('root'));

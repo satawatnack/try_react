@@ -2,8 +2,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Layout from './hoc/Layout/Layout';
+import classes from './App.module.css';
 
-import Home from './containers/HomePage/HomePage';
+const Home = React.lazy(() => import('./containers/HomePage/HomePage'));
 
 const Rockets = React.lazy(() =>
   import('./containers/RocketsPage/RocketsPage')
@@ -26,21 +27,37 @@ import { LaunchProvider } from './contexts/LaunchContext';
 function App() {
   return (
     <div>
-      <Layout>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/rockets" exact component={Rockets} />
-          <Route path="/rockets/:rocket_id" component={RocketDetail} />
+      <React.Suspense
+        fallback={
+          <div className={`${classes.fullPageLoader} ${classes.Logo}`}>
+            <img width="50" src="./astronaut.png" alt="astronaut" />
+          </div>
+        }
+      >
+        <Layout>
+          <React.Suspense
+            fallback={
+              <div className={`${classes.fullPageLoader} ${classes.Logo}`}>
+                <img width="50" src="./astronaut.png" alt="astronaut" />
+              </div>
+            }
+          >
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/rockets" exact component={Rockets} />
+              <Route path="/rockets/:rocket_id" component={RocketDetail} />
 
-          <LaunchProvider>
-            <Route path="/launches" exact component={Launches} />
-            <Route
-              path="/launches/:flightNumber"
-              component={LaunchDetailPage}
-            />
-          </LaunchProvider>
-        </Switch>
-      </Layout>
+              <LaunchProvider>
+                <Route path="/launches" exact component={Launches} />
+                <Route
+                  path="/launches/:flightNumber"
+                  component={LaunchDetailPage}
+                />
+              </LaunchProvider>
+            </Switch>
+          </React.Suspense>
+        </Layout>
+      </React.Suspense>
     </div>
   );
 }
