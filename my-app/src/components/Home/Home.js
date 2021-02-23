@@ -79,6 +79,7 @@ const Home = () => {
                 Website:{' '}
                 <Link
                   to={{ pathname: 'http://spacex.com' }}
+                  rel="noopener"
                   target="_blank"
                   className="hover:underline font-bold"
                 >
@@ -88,6 +89,7 @@ const Home = () => {
                 Flickr:{' '}
                 <Link
                   to={{ pathname: 'http://www.flickr.com/photos/spacex/' }}
+                  rel="noopener"
                   target="_blank"
                   className="hover:underline font-bold"
                 >
@@ -97,6 +99,7 @@ const Home = () => {
                 Twitter:{' '}
                 <Link
                   to={{ pathname: 'http://www.twitter.com/SpaceX' }}
+                  rel="noopener"
                   target="_blank"
                   className="hover:underline font-bold"
                 >
@@ -106,6 +109,7 @@ const Home = () => {
                 Elon Musk Twitter:{' '}
                 <Link
                   to={{ pathname: 'http://www.twitter.com/elonmusk' }}
+                  rel="noopener"
                   target="_blank"
                   className="hover:underline font-bold"
                 >
@@ -137,9 +141,9 @@ const Home = () => {
                       className=" bg-blue-900 fill-current"
                     ></polygon>
                   </svg>
-                  <h4 className="text-xl font-bold text-white">
+                  <p className="text-xl font-bold text-white">
                     Top Notch Services
-                  </h4>
+                  </p>
                   <p className="text-md font-light mt-2 text-white">
                     The Arctic Ocean freezes every winter and much of the
                     sea-ice then thaws every summer, and that process will
