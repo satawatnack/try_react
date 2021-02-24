@@ -7,8 +7,8 @@ const RocketCard = (props) => {
   let rocketImg = props.rocket?.flickr_images?.[0] ?? '';
   let resizeImg =
     rocketImg && (rocketImg[8] === 'f' || rocketImg[8] === 'l')
-      ? `${rocketImg.slice(0, -5)}s.jpg`
-      : `${rocketImg.slice(0, -4)}s.jpg`;
+      ? `${rocketImg.slice(0, -5)}m.jpg`
+      : `${rocketImg.slice(0, -4)}m.jpg`;
 
   return (
     <>
@@ -17,9 +17,9 @@ const RocketCard = (props) => {
           <div className="md:flex">
             <div className="md:flex-shrink-0 m-5">
               <img
-                className=" w-20 rounded-lg"
-                height="400"
-                width="300"
+                className=" w-32 rounded-lg"
+                height="500"
+                width="400"
                 src={resizeImg}
                 alt={props.rocket.rocket_name}
               />
